@@ -172,8 +172,8 @@ export class Game {
 
   public loop(callback?: () => void): void {
     if (this.hero) {
-      this.camera.position.set(0.3, 1, 1 + this.hero.mesh.mesh.position.z);
-      this.camera.lookAt(0, 0, this.hero.mesh.mesh.position.z);
+      this.camera.position.set(0.3 + this.hero.mesh.mesh.position.x, 1, 1 + this.hero.mesh.mesh.position.z);
+      this.camera.lookAt(this.hero.mesh.mesh.position.x, 0, this.hero.mesh.mesh.position.z);
     }
 
     if (this.mobsTurn && this.heroAlive) {
